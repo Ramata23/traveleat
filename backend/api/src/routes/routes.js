@@ -20,11 +20,12 @@ route.post('/sign_up', async (req, res) => {
     try {
         console.log(req.body)
         const mdp = req.body.mdp;
-        const confirme_mdp = req.body.mdp;
+        // const confirme_mdp = req.body.mdp;
         const encryptedmdp = await bcrypt.hash(mdp, saltRounds);
-        const encryptedmdp2 = await bcrypt.hash(confirme_mdp, saltRounds);
-        var sql = `INSERT INTO utilisateur (prenom, email, mdp, confirme_mdp, photo_profil) VALUES ('${req.body.prenom}', '${req.body.email}', '${encryptedmdp}', '${encryptedmdp2}' '${req.body.photo_profil}')`;
-        conn.query(sql, function () {
+        // const encryptedmdp2 = await bcrypt.hash(confirme_mdp, saltRounds);
+        var sql = `INSERT INTO utilisateur (prenom, email, mdp, photo_profil) VALUES ('${req.body.prenom}', '${req.body.email}', '${encryptedmdp}', '${req.body.photo_profil}')`;
+        conn.query(sql, function (err) {
+            if (err) throw err
             console.log("1 ligne insérée");
             res.send("ok")
         });
@@ -33,10 +34,10 @@ route.post('/sign_up', async (req, res) => {
     }
 })
 
-route.post("/sign_in", async function (req, res) {
+route.post("/sign_in", function (req, res) {
     var email = req.body.email;
     var mdp = req.body.mdp;
-    const encryptedmdp = await bcrypt.hash(mdp, saltRounds);
+
     conn.query('SELECT * FROM utilisateur WHERE email = ?', [email], async function (error, results, fields) {
         if (error) {
             res.send({
@@ -46,10 +47,12 @@ route.post("/sign_in", async function (req, res) {
         } else {
             if (results.length > 0) {
                 const comparision = await bcrypt.compare(mdp, results[0].mdp)
-
+                // bcrypt.compare(mdp, results[0].mdp, (err, result) => {
+                                var decoded= jwt.decode(token);
+                // })
 
                 if (comparision) {
-                    var token = jwt.sign({ id: results[0].id, email: results[0].email }, 'shhhhh');
+                    var token = jwt.sign({ id: results[0].id_utilisateur, email: results[0].email }, 'shhhhh');
                     res.status(200).send({
                         "code": 200,
                         "success": "login sucessfull",
@@ -57,8 +60,9 @@ route.post("/sign_in", async function (req, res) {
                     })
                 }
                 else {
-                    res.status(204).send({
-                        "code": 204,
+                    console.log('err')
+                    res.status(206).send({
+                        "code": 206,
                         "success": "Email and mdp does not match",
                         token: null
                     });
@@ -75,6 +79,7 @@ route.post("/sign_in", async function (req, res) {
     });
 
 });
+
 
 route.get("/utilisateurs", function (req, res) {
     try{

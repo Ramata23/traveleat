@@ -2,20 +2,28 @@
   <div id="app">
     <!-- <img alt="Vue logo" src="./assets/logo.png"> -->
     <!-- <HelloWorld msg="Welcome to Your Vue.js App"/> -->
-    <SignUp/>
+     <div id="nav">
+
+    <router-link to="/"></router-link>
+    <router-link to="/dashboard"></router-link>
+    <!-- <router-link to="/connectedheader">ConnectedHeader</router-link> -->
+</div>
+      <router-view/>
+
   </div>
 </template>
 
 <script>
 // import HelloWorld from './components/HelloWorld.vue'
-import SignUp from './views/SignUp'
-export default {
-  name: 'App',
-  components: {
-    // HelloWorld,
-    SignUp
-  }
-}
+
+
+// export default {
+//   name: 'App',
+//   components: {
+//     // HelloWorld,
+    
+//   }
+// }
 </script>
 
 <style>
