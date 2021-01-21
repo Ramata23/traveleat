@@ -101,7 +101,7 @@ export default {
       let objectToSend = {
         prenom: this.$v.prenom.$model,
         email: this.$v.email.$model,
-        password: this.$v.password.$model,
+        mdp: this.$v.password.$model,
       };
       this.axios
         .post("http://localhost:3000/sign_up", objectToSend)

@@ -7,7 +7,7 @@
     <b-card no-body>
     <b-tabs card>  
       <!-- <b-tab title="List-contacts" active><ContactList/></b-tab> -->
-      <b-tab title="Add-contact"><AddRecipe/></b-tab>
+      <b-tab title="Add-recipe"><AddRecipe/></b-tab>
     </b-tabs>
   </b-card>
     <!-- <b-button type="submit" variant="danger" @click= "onclick">Sign-Out</b-button> -->

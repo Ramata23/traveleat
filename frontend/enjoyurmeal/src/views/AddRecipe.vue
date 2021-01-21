@@ -1,6 +1,6 @@
 <template>
 <div>
-    <b-form @submit.prevent="onSubmit" @reset="onReset">
+    <!-- <b-form @submit.prevent="onSubmit" @reset="onReset">
       <b-form-group id="input-group-1" label="Your Name:" label-for="input-1">
         <b-form-input
           id="input-1"
@@ -30,8 +30,10 @@
           >Vous devez fournir un email valide !</b-form-invalid-feedback
         >
       </b-form-group>
-    </b-form>
-    <b-button type="submit" variant="success">Add</b-button>
+    </b-form> -->
+        <b-button type="submit" variant="success">Je publie ma recette</b-button>
+            <b-button type="submit" variant="success">J'explore les recettes</b-button>
+    <b-button type="submit" variant="success">Je donne mon avis</b-button>
 </div>
 </template>
 <script>

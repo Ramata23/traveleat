@@ -32,7 +32,7 @@ export default {
     return {
       form: {
         email: "",
-        password: "",
+        mdp: "",
       },
     };
   },
