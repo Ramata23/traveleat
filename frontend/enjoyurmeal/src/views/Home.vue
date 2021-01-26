@@ -15,9 +15,15 @@
 
         </b-nav-form>
       <b-navbar-nav>
-        <b-nav-item href="Home.vue" class="navitem">Home</b-nav-item>
-        <b-nav-item href="#" class="navitem">Profil</b-nav-item>
-        <b-nav-item href="#" class="navitem">Recettes</b-nav-item>
+        <b-nav-item href="/" class="navitem">HOME</b-nav-item>
+        <b-nav-item href="sign_up" class="navitem">INSCRIPTION</b-nav-item>
+        <b-nav-item href="sign_in" class="navitem">CONNEXION</b-nav-item>
+
+
+            <!-- <router-link to="/sign_up"><b-nav-item class="navitem">INSCRIPTION</b-nav-item></router-link> -->
+            <!-- <router-link to="/sign_in" ><b-nav-item class="navitem">CONNEXION</b-nav-item></router-link> -->
+        <b-nav-item href="/dashboard" class="navitem">PROFIL</b-nav-item>
+        <b-nav-item href="#" class="navitem">RECETTES</b-nav-item>
 
       </b-navbar-nav>
 
@@ -37,29 +43,60 @@
       </b-navbar-nav>
     </b-collapse>
   </b-navbar>
-
+<div class="bg2">
+    <h2>Spécialités</h2>
+ <ul>
+   <li>Riz rouge poisson</li>
+ </ul>
+        <b-img :src="getImg3()" class="img2"></b-img> 
 <br><br>
-<div>
- <b-img :src="getImg2()" class="img2"></b-img>
+</div>
+<div class="bg">
+  <b-img :src="getImg2()" class="img2"></b-img> 
+  <h2 class="desc">Pour qui ? <br>
+    Débutants ou passionnés de cuisine, souhaitant apprendre ou s’améliorer. <br>Ce site s’adresse à tous globalement et pour toutes les occasions.
+    <hr>Pourquoi ? <br> Variez votre cuisine, épatez vos proches, surprenez-les et faites saliver vos amis. <br>Mangez sainement, des produits frais. <br>Découvrir, publier des recettes, prendre des cours de cuisine. <br>Voyager autrement, effectuer une promenade culinaire.</h2>
+    
+  
 
 
 </div>
-<div>
-  <b-card footer="Card Footer">
-      </b-card>
-</div>
+
+<mdb-footer color="blue" class="font-small pt-4 mt-4">
+    <mdb-container class="text-left">
+      <mdb-row>
+        <mdb-col sm="6">
+          <h5 class="title">Suivez-moi !</h5>
+        </mdb-col>
+        <mdb-col sm="6">
+          <ul>
+            <li class="list-unstyled"><a href="#!">Mentions légales</a></li>
+            <li class="list-unstyled"><a href="#!">Contact</a></li>
+            <li class="list-unstyled"><a href="#!">A propos</a></li>
+          </ul>
+        </mdb-col>
+      </mdb-row>
+    </mdb-container>
+    <div class="footer-copyright text-center py-3">
+      <mdb-container fluid>
+        &copy; 2020 Copyright: <a href="https://www.MDBootstrap.com"> MDBootstrap.com </a>
+      </mdb-container>
+    </div>
+  </mdb-footer>
   </div>
 </template>
 
 <script>
 import SignUp from './SignUp.vue'
 import SignIn from './SignIn.vue'
+// import HelloWorld from '../components/HelloWorld.vue'
 
 export default {
   name: 'Home',
   components:{
       SignUp,
-      SignIn
+      SignIn,
+    // HelloWorld
   },
   props: {
     msg: String
@@ -70,6 +107,9 @@ export default {
     },
     getImg2(){
       return require('@/assets/Monmoodboard.png')
+    },
+    getImg3(){
+      return require('@/assets/thieb rouge.jpg')
     },
     
   
@@ -106,10 +146,32 @@ a {
     margin-top: -60px;
 }
 
+.navbar-light .navbar-nav .nav-link {
+    color: #0b0805;
+    font-weight: bold;
+    font-size:18px;
+}
+
 .img2{
-      width: 35%;
-      display: flex;
+      width: 450px;
+      height:400px;
+      display: block;
       margin-left:4rem;
 }
+.bg{
+  background-color: #e9b981;
+  min-height: 40rem;
+  display: flex;
+}
+
+.bg2{
+  background-color: #e9b981;
+}
+
+.desc{
+  text-align: center;
+  width: 48%;
+}
+
 
 </style>

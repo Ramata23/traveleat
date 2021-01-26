@@ -27,12 +27,19 @@
 </script>
 
 <style>
+
+@font-face {
+  font-family: "Kalam Light";
+  src: local("Kalam Light"),
+   url(./fonts/Kalam/Kalam-Light.ttf) format("truetype");
+}
+
 #app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
+  font-family: Kalam Light;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
-  color: #2c3e50;
+  color: #0b0805;
   margin-top: 60px;
 }
 </style>

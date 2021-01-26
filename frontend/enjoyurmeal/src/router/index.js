@@ -1,6 +1,8 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 import Home from '../views/Home.vue'
+import SignIn from '../views/SignIn.vue'
+import SignUp from '../views/SignUp.vue'
 import Dashboard from '../views/Dashboard.vue'
 import store from '../store'
 import ConnectedHeader from '../views/ConnectedHeader.vue'
@@ -11,6 +13,16 @@ const routes = [
     path: '/',
     name: 'Home',
     component: Home
+  },
+  {
+    path: '/sign_in',
+    name: 'SignIn',
+    component: SignIn
+  },
+  {
+    path: '/sign_up',
+    name: 'SignUp',
+    component: SignUp
   },
   {
     path: '/dashboard',
@@ -34,7 +46,7 @@ const routes = [
   }
 ];
 const router = new VueRouter({
-  // mode: 'history',
+  mode: 'history',
   routes
 })
 export default router

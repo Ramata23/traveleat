@@ -1,5 +1,38 @@
 <template>
   <div>
+<b-navbar toggleable="lg" class="nav">
+     <b-navbar-brand href="">
+          <img :src="getImg()" class="img"></b-navbar-brand>
+
+    <b-navbar-toggle target="nav-collapse"></b-navbar-toggle>
+    <b-collapse id="nav-collapse" is-nav>
+        <b-nav-form>
+          <b-form-input size="sm" class="mr-sm-2" placeholder="Search"></b-form-input>
+          <b-button size="sm" class="my-2 my-sm-0" type="submit">Search</b-button>
+                  
+        </b-nav-form>
+         <b-navbar-nav>
+        <b-nav-item href="/" class="navitem">HOME</b-nav-item>
+        <b-nav-item href="sign_up" class="navitem">INSCRIPTION</b-nav-item>
+        <b-nav-item href="sign_in" class="navitem">CONNEXION</b-nav-item>
+
+      </b-navbar-nav>
+<b-navbar-nav class="ml-auto">
+      
+
+        <b-nav-item-dropdown text="Inscription" right>
+              <SignUp/>
+
+        </b-nav-item-dropdown>
+
+        <b-nav-item-dropdown text="Connexion" right>
+              <SignIn/>
+
+        </b-nav-item-dropdown>
+      </b-navbar-nav>
+    </b-collapse>
+  </b-navbar>
+
     <div class="validators"></div>
     <b-form @submit.prevent="onSubmit" @reset="onReset">
       <b-form-group id="input-group-1" label="Prénom:" label-for="input-1">
@@ -64,6 +97,8 @@
 <script>
 import { validationMixin } from "vuelidate";
 import { required, minLength, email, sameAs } from "vuelidate/lib/validators";
+// import SignUp from './SignUp.vue'
+import SignIn from './SignIn.vue'
 
 export default {
   mixins: [validationMixin],
@@ -96,6 +131,9 @@ export default {
 
   },
   methods: {
+    getImg(){
+      return require('@/assets/Traveleat.png')
+    },
     onSubmit(evt) {
       evt.preventDefault();
       let objectToSend = {
@@ -138,6 +176,10 @@ export default {
       });
     },
   },
+  components:{
+      // SignUp,
+      SignIn,
+  }
 };
 </script>
 <style>
@@ -161,5 +203,38 @@ export default {
 }
 input:focus {
   outline: none;
+}
+
+h3 {
+  margin: 40px 0 0;
+}
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+li {
+  display: inline-block;
+  margin: 0 10px;
+}
+a {
+  color: #42b983;
+}
+.nav{
+    background-color: #c4b981;
+}
+.navitem{
+    background-color: #B47C54;
+}
+#__BVID__16{
+        background-color: #B47C54;
+}
+.navbar{
+    margin-top: -60px;
+}
+
+.navbar-light .navbar-nav .nav-link {
+    color: #0b0805;
+    font-weight: bold;
+    font-size:18px;
 }
 </style>
