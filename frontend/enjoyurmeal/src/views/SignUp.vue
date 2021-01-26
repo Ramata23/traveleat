@@ -13,17 +13,11 @@
         </b-nav-form>
          <b-navbar-nav>
         <b-nav-item href="/" class="navitem">HOME</b-nav-item>
-        <b-nav-item href="sign_up" class="navitem">INSCRIPTION</b-nav-item>
         <b-nav-item href="sign_in" class="navitem">CONNEXION</b-nav-item>
 
       </b-navbar-nav>
 <b-navbar-nav class="ml-auto">
       
-
-        <b-nav-item-dropdown text="Inscription" right>
-              <SignUp/>
-
-        </b-nav-item-dropdown>
 
         <b-nav-item-dropdown text="Connexion" right>
               <SignIn/>

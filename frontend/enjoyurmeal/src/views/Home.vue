@@ -62,27 +62,6 @@
 
 </div>
 
-<mdb-footer color="blue" class="font-small pt-4 mt-4">
-    <mdb-container class="text-left">
-      <mdb-row>
-        <mdb-col sm="6">
-          <h5 class="title">Suivez-moi !</h5>
-        </mdb-col>
-        <mdb-col sm="6">
-          <ul>
-            <li class="list-unstyled"><a href="#!">Mentions légales</a></li>
-            <li class="list-unstyled"><a href="#!">Contact</a></li>
-            <li class="list-unstyled"><a href="#!">A propos</a></li>
-          </ul>
-        </mdb-col>
-      </mdb-row>
-    </mdb-container>
-    <div class="footer-copyright text-center py-3">
-      <mdb-container fluid>
-        &copy; 2020 Copyright: <a href="https://www.MDBootstrap.com"> MDBootstrap.com </a>
-      </mdb-container>
-    </div>
-  </mdb-footer>
   </div>
 </template>
 
@@ -173,5 +152,9 @@ a {
   width: 48%;
 }
 
-
+.navbar-light .navbar-nav .nav-link {
+    color: #0b0805;
+    font-weight: bold;
+    font-size: 18px;
+}
 </style>
