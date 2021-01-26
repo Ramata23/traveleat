@@ -91,12 +91,15 @@
 <script>
 import { validationMixin } from "vuelidate";
 import { required, minLength, email, sameAs } from "vuelidate/lib/validators";
-// import SignUp from './SignUp.vue'
 import SignIn from './SignIn.vue'
 
 export default {
+  name: "SignUp",
+
   mixins: [validationMixin],
-  prenom: "SignUp",
+  components: {
+      SignIn,
+  },
   data() {
     return {
       email: "",
@@ -105,6 +108,7 @@ export default {
       confirmPassword: "",
     };
   },
+  
   validations: {
     prenom: {
       required,
@@ -124,6 +128,7 @@ export default {
         },
 
   },
+   
   methods: {
     getImg(){
       return require('@/assets/Traveleat.png')
@@ -170,10 +175,7 @@ export default {
       });
     },
   },
-  components:{
-      // SignUp,
-      SignIn,
-  }
+ 
 };
 </script>
 <style>

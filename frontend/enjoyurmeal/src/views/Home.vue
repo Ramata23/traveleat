@@ -31,19 +31,17 @@
       <b-navbar-nav class="ml-auto">
       
 
-        <b-nav-item-dropdown text="Inscription" right>
-              <SignUp/>
+              <!-- <SignUp/> -->
 
-        </b-nav-item-dropdown>
+        
 
-        <b-nav-item-dropdown text="Connexion" right>
-              <SignIn/>
+              <!-- <SignIn/> -->
 
-        </b-nav-item-dropdown>
       </b-navbar-nav>
     </b-collapse>
   </b-navbar>
 <div class="bg2">
+
     <h2>Spécialités</h2>
  <ul>
    <li>Riz rouge poisson</li>
@@ -66,15 +64,17 @@
 </template>
 
 <script>
-import SignUp from './SignUp.vue'
-import SignIn from './SignIn.vue'
+// import SignUp from './SignUp.vue'
+// import SignIn from './SignIn.vue'
+
+
 // import HelloWorld from '../components/HelloWorld.vue'
 
 export default {
   name: 'Home',
   components:{
-      SignUp,
-      SignIn,
+      // SignUp,
+      // SignIn,
     // HelloWorld
   },
   props: {
