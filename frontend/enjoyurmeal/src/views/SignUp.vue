@@ -91,11 +91,12 @@
 <script>
 import { validationMixin } from "vuelidate";
 import { required, minLength, email, sameAs } from "vuelidate/lib/validators";
+import { helpers } from 'vuelidate/lib/validators'
+const alpha = helpers.regex('alpha', /^[a-zA-Z\\s-àâäãçéèêëìîïòôöõùûüñ'-]/)
 import SignIn from './SignIn.vue'
 
 export default {
   name: "SignUp",
-
   mixins: [validationMixin],
   components: {
       SignIn,
@@ -113,6 +114,7 @@ export default {
     prenom: {
       required,
       minlength: minLength(3),
+      alpha
     },
     email: {
       required,

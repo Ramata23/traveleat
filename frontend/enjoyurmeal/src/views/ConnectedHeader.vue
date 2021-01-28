@@ -1,10 +1,7 @@
 <template>
   <div>
-    <b-navbar toggleable="lg" type="dark" variant="dark">
-      <b-navbar-brand>Dashboard {{this.$store.getters.isUsername.name}}</b-navbar-brand>
-      
-
       <b-navbar-toggle target="nav-collapse"></b-navbar-toggle>
+      <!-- <b-navbar-brand>Dashboard {{this.$store.getters.isUsername.name}}</b-navbar-brand> -->
 
       <b-collapse id="nav-collapse" is-nav>
     
@@ -13,9 +10,7 @@
             <b-button type="submit" variant="danger" @click="onclick">Sign-Out</b-button>
         </b-navbar-nav>
       </b-collapse>
-    </b-navbar>
 
-    <p>Welcome to you connected user !</p>
   </div>
 </template>
 

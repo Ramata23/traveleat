@@ -2,8 +2,6 @@
 <div>
     
     <header><ConnectedHeader/></header>
-    <h1>This is Dashboard page</h1>
-    <h3>Welcome to your connected user !</h3>
     <b-card no-body>
     <b-tabs card>  
       <!-- <b-tab title="List-contacts" active><ContactList/></b-tab> -->

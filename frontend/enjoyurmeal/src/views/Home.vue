@@ -23,7 +23,7 @@
             <!-- <router-link to="/sign_up"><b-nav-item class="navitem">INSCRIPTION</b-nav-item></router-link> -->
             <!-- <router-link to="/sign_in" ><b-nav-item class="navitem">CONNEXION</b-nav-item></router-link> -->
         <b-nav-item href="/dashboard" class="navitem">PROFIL</b-nav-item>
-        <b-nav-item href="#" class="navitem">RECETTES</b-nav-item>
+        <b-nav-item href="/recettes" class="navitem">RECETTES</b-nav-item>
 
       </b-navbar-nav>
 

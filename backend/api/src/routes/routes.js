@@ -114,9 +114,13 @@ route.post("/new_recette", function (req, res) {
     try {
         console.log(req.body)
         var nom_recette = req.body.nom_recette;
+        nom_recette = nom_recette.replace(/'/g, ' ')
+        nom_recette = nom_recette.replace(/`/g, ' ')
         var auteur = req.body.auteur;
         var photo = req.body.photo;
         var description = req.body.description;
+        description = description.replace(/'/g, ' ')
+        description = description.replace(/`/g, ' ')
         var TO_DATE = req.body.date_publication;
         var id_utilisateur = req.body.id_utilisateur;
         var sql = `INSERT INTO recettes (nom_recette, auteur, photo, description, date_publication, id_utilisateur) 

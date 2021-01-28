@@ -6,6 +6,8 @@ import SignUp from '../views/SignUp.vue'
 import Dashboard from '../views/Dashboard.vue'
 import store from '../store'
 import ConnectedHeader from '../views/ConnectedHeader.vue'
+import Recettes from '../views/Recettes.vue'
+
 
 Vue.use(VueRouter)
 const routes = [
@@ -23,6 +25,11 @@ const routes = [
     path: '/sign_up',
     name: 'SignUp',
     component: SignUp
+  },
+  {
+    path: '/recettes',
+    name: 'Recettes',
+    component: Recettes
   },
   {
     path: '/dashboard',

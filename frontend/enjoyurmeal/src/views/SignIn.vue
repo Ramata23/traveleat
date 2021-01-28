@@ -39,7 +39,7 @@
       </b-form-group>
 
       <b-form-group id="input-group-6" label="MDP:" label-for="input-6">
-        <b-form-input id="input-6" type="password" v-model="form.password" required placeholder="MDP :"></b-form-input>
+        <b-form-input id="input-6" type="password" v-model="form.mdp" required placeholder="MDP :"></b-form-input>
       </b-form-group>
 
       <b-button type="submit" variant="success">Sign-in</b-button>
@@ -49,11 +49,15 @@
 
 <script>
 import jwt from 'jsonwebtoken'
+import { validationMixin } from "vuelidate";
+import { required, minLength, email } from "vuelidate/lib/validators";
+
 // import Dashboard from "../views/Dashboard"
 // import SignUp from './SignUp.vue'
 
 export default {
   name: "SignIn",
+  mixins: [validationMixin],
   components: {
     // SignUp,
   },
@@ -64,6 +68,17 @@ export default {
         mdp: "",
       },
     };
+    
+  },
+  validations: {
+    email: {
+      required,
+      email,
+    },
+    mdp: {
+      required,
+      minlength: minLength(8),
+    },
   },
   methods: {
     getImg(){
@@ -91,7 +106,7 @@ export default {
       evt.preventDefault();
       // Reset our form values
       this.form.email = "";
-      this.form.password = "";
+      this.form.mdp = "";
       // Trick to reset/clear native browser form validation state
       this.show = false;
       this.$nextTick(() => {
